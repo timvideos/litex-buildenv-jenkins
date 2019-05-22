@@ -1,0 +1,9 @@
+install.txt - manual steps to build the jenkins box
+
+tests_v1.sh - a scritp that runs the tests
+tests - the tests
+datas - reference files used for tests
+
+build-openocd.sh - port openodc to arm for pi
+flash.txt - paths to commands to download, flash and power cycle
+RaspberryPi - config for the pi (mostly to make it do 720p)
