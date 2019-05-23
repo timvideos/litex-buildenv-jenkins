@@ -1,0 +1,10 @@
+# example of download, flash, powercycle
+# shows paths to use the needed venv's.
+
+cd ~/prebuilt
+
+python3 ../HDMI2USB-mode-switch/bin/download-prebuilt-firmware.py --platform opsis --rev v0.0.4-340-g3fb4e7c
+
+~/HDMI2USB-mode-switch/venv/bin/hdmi2usb-mode-switch -v --flash-image image-gateware+bios+firmware.v0.0.4-340-g3fb4e7c.opsis.hdmi2usb.lm32.bin
+
+~/bin/relay-off-on.sh
