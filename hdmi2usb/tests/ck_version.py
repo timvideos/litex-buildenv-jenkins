@@ -23,6 +23,8 @@ class ck_version(ck_tty):
         response = requests.get(url)
         channels = {}
         for line in response.text.split('\n'):
+            if self.args.verbose: print(line)
+
             if line:
                 tds = line.split()
                 channels[tds[0]] = {
