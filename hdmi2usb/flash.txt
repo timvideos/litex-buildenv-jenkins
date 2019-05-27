@@ -7,4 +7,4 @@ python3 ../HDMI2USB-mode-switch/bin/download-prebuilt-firmware.py --platform ops
 
 ~/HDMI2USB-mode-switch/venv/bin/hdmi2usb-mode-switch -v --flash-image image-gateware+bios+firmware.v0.0.4-340-g3fb4e7c.opsis.hdmi2usb.lm32.bin
 
-~/bin/relay-off-on.sh
+~/bin/opsis-off-on.sh

@@ -1,0 +1,1 @@
+ATTRS{product}=="Numato Lab 4 Channel USB Relay Module", SYMLINK+="relay"

@@ -12,6 +12,11 @@ sudo apt install \
     libftdi1 libftdi1-2 \
     libjaylink0 libjim0.77
 
+sudo cp 61-numato-relay-udev.rule /lib/udev/rules.d
+
+mkdir ~/bin
+cp opsis-off-on.sh atlys-off-on.sh ~/bin
+
 mkdir temp
 (
 cd temp

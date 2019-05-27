@@ -16,6 +16,8 @@ Connecting pattern to encoder
 
 disconnect
 ./grab_hdmi2usb.sh
+gst-launch-1.0 v4l2src num-buffers=3 ! jpegdec ! queue ! videoconvert ! pngenc ! multifilesink location="frame-%d.png
+
 display frame-1.png
 
 mv frame-1.png v0.0.4-277-g2b3ff04.png
