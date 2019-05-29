@@ -69,7 +69,7 @@ cp -v bin/* ~/bin
 python3 -m venv venv --system-site-packages
 . venv/bin/activate
 
-pip install requests
+# pip install requests
 # pyserial
 
 # prime expected spews

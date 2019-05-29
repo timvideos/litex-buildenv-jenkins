@@ -1,4 +1,4 @@
-#!/binbash
+#!/bin/bash
 
 echo relay 0 is Opsis
 echo relay 2 is Atlys
