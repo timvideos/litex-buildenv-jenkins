@@ -12,11 +12,6 @@ sudo apt install \
     libftdi1 libftdi1-2 \
     libjaylink0 libjim0.77
 
-sudo cp 61-numato-relay-udev.rule /lib/udev/rules.d
-
-mkdir ~/bin
-cp opsis-off-on.sh atlys-off-on.sh ~/bin
-
 mkdir temp
 (
 cd temp
@@ -58,9 +53,19 @@ python3 -m venv venv --system-site-packages
 python setup.py install
 )
 
-git clone https://github.com/timvideos/HDMI2USB-litex-firmware
-(
-cd HDMI2USB-litex-firmware/jenkins/tests
+git clone https://github.com/CarlFK/litex-buildenv-jenkins.git
+
+cd litex-buildenv-jenkins/hdmi2usb
+
+(cd install
+
+sudo cp udev/61-numato-relay-udev.rule /lib/udev/rules.d
+
+mkdir ~/bin
+cp -v bin/* ~/bin
+)
+
+(cd tests
 python3 -m venv venv --system-site-packages
 . venv/bin/activate
 
@@ -68,6 +73,11 @@ pip install requests
 # pyserial
 
 # prime expected spews
-v4l2-compliance --device /dev/hdmi2usb/by-num/all0/video > ../datas/v4l2-compliance.txt
-)
 
+v4l2-compliance --device /dev/hdmi2usb/by-num/opsis0/video > datas/v4l2-compliance.opsis.txt
+v4l2-compliance --device /dev/hdmi2usb/by-num/atlys0/video > datas/v4l2-compliance.atlys.txt
+
+v4l2-ctl --all --device /dev/hdmi2usb/by-num/opsis0/video > datas/v4l2-ctl.opsis.txt
+v4l2-ctl --all --device /dev/hdmi2usb/by-num/atlys0/video > datas/v4l2-ctl.atlys.txt
+
+)

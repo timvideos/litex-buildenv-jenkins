@@ -8,14 +8,6 @@ import time
 from ck_ab import ck_ab
 
 
-class Tty_talker():
-
-    def __init__(self, tty):
-        with serial.Serial(tty, 115200, timeout=1) as ser:
-            # um.. how's this gonna work?
-            pass
-
-
 class ck_tty(ck_ab):
 
     version = 0.7
@@ -53,9 +45,11 @@ class ck_tty(ck_ab):
             if len(line)==0:
                 break
 
-            line = line.decode().strip()
+            line = line.decode('utf-8', errors="ignore").strip()
             lines.append(line)
 
+        if self.args.verbose:
+            print(lines)
         return lines
 
 
