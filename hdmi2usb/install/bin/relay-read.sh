@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo relay 0 is Opsis
-echo relay 2 is Atlys
+echo relay $OPSIS_RELAY is Opsis
+echo relay $ATLYS_RELAY is Atlys
 echo relay on = board power off
 echo relay off = board power on
 
-relay.sh 0 read
-relay.sh 2 read
+relay.sh $OPSIS_RELAY read
+relay.sh $ATLYS_RELAY read

@@ -1,2 +1,2 @@
 #!/bin/bash -x
-relay.sh 0 off
+relay.sh $OPSIS_RELAY off

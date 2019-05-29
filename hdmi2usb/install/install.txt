@@ -65,6 +65,9 @@ mkdir ~/bin
 cp -v bin/* ~/bin
 )
 
+echo export OPSIS_RELAY=0 >> ~/.bashrc
+echo export ATLYS_RELAY=2 >> ~/.bashrc
+
 (cd tests
 python3 -m venv venv --system-site-packages
 . venv/bin/activate

@@ -1,2 +1,2 @@
 #!/bin/bash -x
-relay.sh 2 on
+relay.sh $ATLYS_RELAY on
