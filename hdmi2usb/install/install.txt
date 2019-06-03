@@ -61,6 +61,7 @@ cd litex-buildenv-jenkins/hdmi2usb
 
 (cd install
 sudo cp udev/61-numato-relay-udev.rule /lib/udev/rules.d
+
 mkdir ~/bin
 cp -v bin/* ~/bin
 )

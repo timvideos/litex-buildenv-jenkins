@@ -9,6 +9,6 @@ python3 ../HDMI2USB-mode-switch/bin/download-prebuilt-firmware.py --platform atl
 ~/HDMI2USB-mode-switch/venv/bin/hdmi2usb-mode-switch -v --by-type opsis --flash-image opsis.hdmi2usb.lm32.bin
 opsis-off-on.sh
 ~/HDMI2USB-mode-switch/venv/bin/hdmi2usb-mode-switch -v --by-type atlys --flash-image atlys.hdmi2usb.lm32.bin
+
 atlys-off-on.sh
-
-
+opsis-off-on.sh
