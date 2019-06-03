@@ -29,4 +29,6 @@ Connecting input1 to encoder
 
 display image on pi's vt1
 ssh pi@oppi "sudo fbi -noverbose --vt 1 1280x720_input.png"
+sudo fbi -noverbose --vt 1 1280x720_input.png
+sudo fbi -noverbose --vt 1
 

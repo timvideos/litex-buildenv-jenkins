@@ -20,9 +20,10 @@ class ck_video(ck_ab_gst, ck_tty):
         self.set_pattern()
 
         tempdir="/tmp"
-        pipeline = 'v4l2src device={dev} num-buffers=3 ! jpegdec !  queue ! videoconvert ! pngenc ! multifilesink location="{tempdir}/frame-%d.png"'.format(
+        pipeline = 'v4l2src device={dev} num-buffers=3 ! jpegdec !  queue ! videoconvert ! pngenc ! multifilesink location="{tempdir}/frame-%d-{board}.png"'.format(
                 dev=self.args.video,
                 tempdir=tempdir,
+                board=self.args.board,
                 )
 
         self.run_pipeline(pipeline)

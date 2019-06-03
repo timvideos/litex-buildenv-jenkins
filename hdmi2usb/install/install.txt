@@ -10,8 +10,10 @@ sudo apt install \
     gstreamer1.0-plugins-good \
     jenkins \
     libftdi1 libftdi1-2 \
-    libjaylink0 libjim0.77
+    libjaylink0 libjim0.77 \
+    tio cstream
 
+# openocd on Pi
 mkdir temp
 (
 cd temp
@@ -26,7 +28,7 @@ sudo dpkg -i libjim0.77_0.77+dfsg0-3_armhf.deb
 
 )
 
-# magic line:
+# and some stuff I found on my laptop
 scp \
   /usr/share/openocd/scripts/board/numato_opsis.cfg \
   /usr/share/openocd/scripts/cpld/xilinx-xc6s.cfg \
@@ -58,12 +60,13 @@ git clone https://github.com/CarlFK/litex-buildenv-jenkins.git
 cd litex-buildenv-jenkins/hdmi2usb
 
 (cd install
-
 sudo cp udev/61-numato-relay-udev.rule /lib/udev/rules.d
-
 mkdir ~/bin
 cp -v bin/* ~/bin
 )
+
+sudo cp systemd/dev_setup.service /etc/systemd/system/
+sudo systemctl enable dev_setup.service
 
 echo export OPSIS_RELAY=0 >> ~/.bashrc
 echo export ATLYS_RELAY=2 >> ~/.bashrc

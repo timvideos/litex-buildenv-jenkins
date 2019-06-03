@@ -23,7 +23,7 @@ class ck_tty(ck_ab):
             r = self.ser.write(c.encode())
             time.sleep(.3)
 
-        if self.args.version: print()
+        if self.args.verbose: print()
 
         return
 

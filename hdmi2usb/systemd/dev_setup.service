@@ -1,0 +1,18 @@
+# /etc/systemd/system/dev_setup.service
+
+# turns off Opsis and Atlys,
+# turns them back on
+# laods hdmi2usb.hex
+# make expected links that tests rely on
+
+[Unit]
+Description=Ugly hack to set things up for Jenkins tests
+After=basic.target
+Wants=basic.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/pi/litex-buildenv-jenkins/hdmi2usb/systemd/dev_setup.sh
+
+[Install]
+WantedBy=multi-user.target
