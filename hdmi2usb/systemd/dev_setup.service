@@ -2,7 +2,7 @@
 
 # turns off Opsis and Atlys,
 # turns them back on
-# laods hdmi2usb.hex
+# loads hdmi2usb.hex
 # make expected links that tests rely on
 
 [Unit]
