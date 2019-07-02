@@ -1,8 +1,11 @@
-install.txt - manual steps to build the jenkins box
+install/install.txt - manual steps to build the jenkins box
+install/bin - scripts to powercycle and connect to boards
 
-tests_v1.sh - a scritp that runs the tests
+systemd/ - powercycle the boards, fix links
+
 tests - the tests
-datas - reference files used for tests
+tests/top_turtle.sh - a scritp that runs the tests (called from jenkins)
+tests/datas - reference files used for tests
 
 build-openocd.sh - port openodc to arm for pi
 flash.txt - paths to commands to download, flash and power cycle
