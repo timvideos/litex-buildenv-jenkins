@@ -47,6 +47,11 @@ sudo adduser jenkins pi
 
 mkdir prebuilt
 
+git clone https://github.com/litex-hub/litex-buildenv-udev.git
+cd litex-buildenv-udev
+make install
+make reload
+
 git clone https://github.com/timvideos/HDMI2USB-mode-switch
 (
 cd HDMI2USB-mode-switch
@@ -65,9 +70,6 @@ sudo cp udev/61-numato-relay-udev.rule /lib/udev/rules.d
 mkdir ~/bin
 cp -v bin/* ~/bin
 )
-
-sudo cp systemd/dev_setup.service /etc/systemd/system/
-sudo systemctl enable dev_setup.service
 
 echo export OPSIS_RELAY=0 >> ~/.bashrc
 echo export ATLYS_RELAY=2 >> ~/.bashrc
